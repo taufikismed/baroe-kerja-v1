@@ -1,0 +1,17 @@
+{
+  "name": "BaroeKerja - Catatan & Tugas Agensi Kreatif",
+  "short_name": "BaroeKerja",
+  "description": "Aplikasi catatan dan manajemen alur kerja kreatif digital per klien dan proyek",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F0FDF4",
+  "theme_color": "#15803D",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

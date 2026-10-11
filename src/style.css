@@ -1,0 +1,592 @@
+/* ==========================================================================
+   BaroeKerja — Sistem Desain & Variabel Tema
+   Berdasarkan PRD Aplikasi Catatan & Daftar Pekerjaan untuk Agensi Kreatif
+   ========================================================================== */
+
+:root {
+  /* Brand Hijau - Mode Terang */
+  --color-primary: #15803D;
+  --color-primary-dark: #14532D;
+  --color-primary-rgb: 21, 128, 61;
+  --color-accent: #22C55E;
+  --color-soft: #DCFCE7;
+  --color-soft-text: #14532D;
+  
+  --color-bg: #F0FDF4;
+  --color-surface: #FFFFFF;
+  --color-surface-subtle: #F8FAF9;
+  --color-surface-hover: #F2FBF5;
+  
+  --color-text: #1F2937;
+  --color-text-muted: #6B7280;
+  --color-text-light: #9CA3AF;
+  
+  --color-border: #E5E7EB;
+  --color-border-subtle: #F0F2F1;
+  --color-border-focus: #15803D;
+
+  /* Status Pekerjaan Kreatif */
+  --status-brief: #6B7280;
+  --status-brief-bg: #F3F4F6;
+  --status-dikerjakan: #2563EB;
+  --status-dikerjakan-bg: #EFF6FF;
+  --status-revisi: #D97706;
+  --status-revisi-bg: #FEF3C7;
+  --status-menunggu: #7C3AED;
+  --status-menunggu-bg: #F5F3FF;
+  --status-selesai: #22C55E;
+  --status-selesai-bg: #DCFCE7;
+  --status-selesai-text: #14532D;
+  --status-terlambat: #DC2626;
+  --status-terlambat-bg: #FEE2E2;
+
+  /* Prioritas */
+  --priority-rendah: #64748B;
+  --priority-rendah-bg: #F1F5F9;
+  --priority-sedang: #0284C7;
+  --priority-sedang-bg: #E0F2FE;
+  --priority-tinggi: #EA580C;
+  --priority-tinggi-bg: #FFEDD5;
+  --priority-mendesak: #E11D48;
+  --priority-mendesak-bg: #FFE4E6;
+
+  /* Shadow & Elevation */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --header-height: 64px;
+  --sidebar-width: 280px;
+  --bottom-bar-height: 64px;
+}
+
+/* ==========================================================================
+   Mode Gelap
+   ========================================================================== */
+html.dark,
+[data-theme="dark"] {
+  --color-primary: #4ADE80;
+  --color-primary-dark: #166534;
+  --color-primary-rgb: 74, 222, 128;
+  --color-accent: #22C55E;
+  --color-soft: #14301F;
+  --color-soft-text: #86EFAC;
+
+  --color-bg: #0F1A14;
+  --color-surface: #16241C;
+  --color-surface-subtle: #1C2E24;
+  --color-surface-hover: #1F3328;
+
+  --color-text: #E5E7EB;
+  --color-text-muted: #9CA3AF;
+  --color-text-light: #6B7280;
+
+  --color-border: #243629;
+  --color-border-subtle: #1B2B21;
+  --color-border-focus: #4ADE80;
+
+  /* Status Pekerjaan di Mode Gelap */
+  --status-brief: #9CA3AF;
+  --status-brief-bg: #272B28;
+  --status-dikerjakan: #60A5FA;
+  --status-dikerjakan-bg: #172554;
+  --status-revisi: #FBBF24;
+  --status-revisi-bg: #451A03;
+  --status-menunggu: #C084FC;
+  --status-menunggu-bg: #3B0764;
+  --status-selesai: #4ADE80;
+  --status-selesai-bg: #14301F;
+  --status-selesai-text: #86EFAC;
+  --status-terlambat: #F87171;
+  --status-terlambat-bg: #450A0A;
+
+  /* Prioritas di Mode Gelap */
+  --priority-rendah: #94A3B8;
+  --priority-rendah-bg: #1E293B;
+  --priority-sedang: #38BDF8;
+  --priority-sedang-bg: #0C4A6E;
+  --priority-tinggi: #FB923C;
+  --priority-tinggi-bg: #431407;
+  --priority-mendesak: #FB7185;
+  --priority-mendesak-bg: #4C0519;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.7);
+}
+
+/* ==========================================================================
+   CSS Reset & Dasar
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+button, input, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  touch-action: manipulation;
+  min-height: 38px;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* Scrollbar Custom */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.25);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.4);
+}
+
+/* ==========================================================================
+   Layout Induk & Grid
+   ========================================================================== */
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Sidebar Desktop */
+.app-sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 30;
+  transition: transform 0.25s ease, width 0.25s ease;
+}
+
+/* Area Konten Utama */
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  background-color: var(--color-bg);
+}
+
+.app-content {
+  flex: 1;
+  padding: 24px 32px 48px;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .app-content {
+    padding: 16px 16px 88px; /* space for mobile bottom bar */
+  }
+}
+
+/* Header Aplikasi */
+.app-header {
+  height: var(--header-height);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(8px);
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0 16px;
+    height: 58px;
+  }
+}
+
+/* ==========================================================================
+   Komponen Tombol & Badge
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.18s ease;
+  user-select: none;
+  min-height: 40px;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(21, 128, 61, 0.25);
+}
+
+html.dark .btn-primary {
+  color: #0F1A14;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 4px 10px rgba(21, 128, 61, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  filter: brightness(0.95);
+}
+
+.btn-secondary {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-border-focus);
+}
+
+.btn-soft {
+  background-color: var(--color-soft);
+  color: var(--color-soft-text);
+  font-weight: 600;
+}
+
+.btn-soft:hover {
+  filter: brightness(0.95);
+}
+
+.btn-ghost {
+  color: var(--color-text-muted);
+}
+
+.btn-ghost:hover {
+  color: var(--color-text);
+  background-color: var(--color-soft);
+}
+
+.btn-danger {
+  background-color: #EF4444;
+  color: #FFFFFF;
+}
+
+.btn-danger:hover {
+  background-color: #DC2626;
+}
+
+.btn-icon {
+  width: 38px;
+  height: 38px;
+  min-height: 38px;
+  padding: 0;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: all 0.15s ease;
+}
+
+.btn-icon:hover {
+  color: var(--color-text);
+  background-color: var(--color-surface-hover);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Badge Status Pekerjaan */
+.badge-status-brief {
+  background-color: var(--status-brief-bg);
+  color: var(--status-brief);
+}
+.badge-status-brief .badge-dot { background-color: var(--status-brief); }
+
+.badge-status-dikerjakan {
+  background-color: var(--status-dikerjakan-bg);
+  color: var(--status-dikerjakan);
+}
+.badge-status-dikerjakan .badge-dot { background-color: var(--status-dikerjakan); }
+
+.badge-status-revisi {
+  background-color: var(--status-revisi-bg);
+  color: var(--status-revisi);
+}
+.badge-status-revisi .badge-dot { background-color: var(--status-revisi); }
+
+.badge-status-menunggu {
+  background-color: var(--status-menunggu-bg);
+  color: var(--status-menunggu);
+}
+.badge-status-menunggu .badge-dot { background-color: var(--status-menunggu); }
+
+.badge-status-selesai {
+  background-color: var(--status-selesai-bg);
+  color: var(--status-selesai-text);
+  font-weight: 600;
+}
+.badge-status-selesai .badge-dot { background-color: var(--color-accent); }
+
+.badge-status-terlambat {
+  background-color: var(--status-terlambat-bg);
+  color: var(--status-terlambat);
+  font-weight: 600;
+}
+.badge-status-terlambat .badge-dot { background-color: var(--status-terlambat); }
+
+/* Badge Prioritas */
+.badge-priority-rendah {
+  background-color: var(--priority-rendah-bg);
+  color: var(--priority-rendah);
+}
+.badge-priority-sedang {
+  background-color: var(--priority-sedang-bg);
+  color: var(--priority-sedang);
+}
+.badge-priority-tinggi {
+  background-color: var(--priority-tinggi-bg);
+  color: var(--priority-tinggi);
+}
+.badge-priority-mendesak {
+  background-color: var(--priority-mendesak-bg);
+  color: var(--priority-mendesak);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Kartu, Form & Input
+   ========================================================================== */
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.card:hover {
+  border-color: rgba(var(--color-primary-rgb), 0.35);
+  box-shadow: var(--shadow-md);
+}
+
+.input-text, .input-select, .input-textarea {
+  width: 100%;
+  padding: 9px 13px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input-text:focus, .input-select:focus, .input-textarea:focus {
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.15);
+}
+
+.input-text::placeholder, .input-textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   Modal Dialog & Backdrop
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+  animation: fadeIn 0.15s ease-out;
+}
+
+.modal-content {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 540px;
+  box-shadow: var(--shadow-xl);
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.18s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ==========================================================================
+   Tugas Selesai Strikethrough & Micro-animasi
+   ========================================================================== */
+.task-item-done .task-title {
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+  opacity: 0.75;
+}
+
+.task-item {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.task-item:hover {
+  transform: translateX(2px);
+}
+
+/* Mobile Bottom Navigation */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--bottom-bar-height);
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  z-index: 40;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 8px;
+}
+
+@media (max-width: 768px) {
+  .app-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-xl);
+  }
+  
+  .app-sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .mobile-bottom-nav {
+    display: flex;
+  }
+}
+
+/* Floating Action Button (FAB) */
+.fab-button {
+  position: fixed;
+  bottom: calc(var(--bottom-bar-height) + 16px);
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(21, 128, 61, 0.4);
+  z-index: 45;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fab-button:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 24px rgba(21, 128, 61, 0.5);
+}
+
+@media (min-width: 769px) {
+  .fab-button {
+    bottom: 28px;
+    right: 28px;
+  }
+}

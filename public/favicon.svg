@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="50%" stop-color="#15803D"/>
+      <stop offset="100%" stop-color="#14532D"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#14532D" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Background Rounded Squircle -->
+  <rect x="32" y="32" width="448" height="448" rx="112" fill="url(#brandGrad)" filter="url(#shadow)"/>
+  <!-- Stylized Monogram / Work Agency Symbol: B & Checkmark & Creative layers -->
+  <path d="M156 148H276C320.183 148 356 176.654 356 212C356 235.176 340.5 255.056 317 265C347.5 276.5 368 299.5 368 328C368 367.765 328.598 400 280 400H156V148Z" fill="white" fill-opacity="0.12"/>
+  <!-- Main white crisp glyph -->
+  <rect x="160" y="140" width="36" height="232" rx="18" fill="#FFFFFF"/>
+  <!-- Checkmark slash crossing forward -->
+  <path d="M160 270L230 340L356 190" stroke="#FFFFFF" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Accent spark / creative spark -->
+  <circle cx="364" cy="156" r="22" fill="#86EFAC"/>
+</svg>
